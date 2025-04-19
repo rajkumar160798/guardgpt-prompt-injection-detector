@@ -21,10 +21,10 @@ clf = LogisticRegression()
 clf.fit(X_vec, y)
 
 # Save models
-with open("models/vectorizer.pkl", "wb") as f:
+with open("../models/vectorizer.pkl", "wb") as f:
     pickle.dump(vectorizer, f)
 
-with open("models/classifier.pkl", "wb") as f:
+with open("../models/classifier.pkl", "wb") as f:
     pickle.dump(clf, f)
 
 print("✅ Model and vectorizer saved to /models")

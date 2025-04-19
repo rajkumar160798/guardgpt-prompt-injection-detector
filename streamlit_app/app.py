@@ -6,10 +6,10 @@ import re
 from sklearn.utils.validation import check_is_fitted
 
 # --- Load Model and Vectorizer ---
-with open("models/vectorizer.pkl", "rb") as f:
+with open("../models/vectorizer.pkl", "rb") as f:
     vectorizer = pickle.load(f)
 
-with open("models/classifier.pkl", "rb") as f:
+with open("../models/classifier.pkl", "rb") as f:
     clf = pickle.load(f)
 
 try:

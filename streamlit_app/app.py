@@ -3,6 +3,7 @@ import plotly.graph_objects as go
 import pickle
 import os
 import re
+from sklearn.utils.validation import check_is_fitted
 
 # --- Load Model and Vectorizer ---
 with open("models/vectorizer.pkl", "rb") as f:
@@ -10,6 +11,12 @@ with open("models/vectorizer.pkl", "rb") as f:
 
 with open("models/classifier.pkl", "rb") as f:
     clf = pickle.load(f)
+
+try:
+    check_is_fitted(vectorizer, attributes=["idf_"])
+except Exception as e:
+    st.error(f"Vectorizer is not fitted: {e}")
+    st.stop()
 
 # --- Regex Patterns ---
 regex_patterns = [

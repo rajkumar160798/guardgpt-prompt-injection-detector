@@ -5,17 +5,22 @@ import os
 import re
 from sklearn.utils.validation import check_is_fitted
 
-# --- Load Model and Vectorizer ---
-with open("../models/vectorizer.pkl", "rb") as f:
-    vectorizer = pickle.load(f)
+# Get the absolute path to the models directory
+base_dir = os.path.dirname(os.path.abspath(__file__))
+models_dir = os.path.join(base_dir, "../models")
 
-with open("../models/classifier.pkl", "rb") as f:
-    clf = pickle.load(f)
-
+# Load the vectorizer and classifier
 try:
+    with open(os.path.join(models_dir, "vectorizer.pkl"), "rb") as f:
+        vectorizer = pickle.load(f)
+
+    with open(os.path.join(models_dir, "classifier.pkl"), "rb") as f:
+        clf = pickle.load(f)
+
+    # Check if the vectorizer is fitted
     check_is_fitted(vectorizer, attributes=["idf_"])
 except Exception as e:
-    st.error(f"Vectorizer is not fitted: {e}")
+    st.error(f"Error loading models: {e}")
     st.stop()
 
 # --- Regex Patterns ---

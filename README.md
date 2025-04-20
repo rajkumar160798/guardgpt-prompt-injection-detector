@@ -11,6 +11,10 @@
 ## 🚀 Live Demo
 
 📍 Try it now: [https://guardgpt-prompt-injection-detector.streamlit.app](https://guardgpt-prompt-injection-detector.streamlit.app)
+<p align="center">
+  <img src="pictures/pic1.png" width="100%" />
+  <img src="pictures/pic2.png" width="100%"/>
+</p>
 
 ---
 
@@ -21,6 +25,10 @@
 - ❌ Requests for unethical or illegal content (e.g. "make a bomb", "fake passport")
 - ✅ Legitimate user prompts are scored as low risk
 
+<p align="center">
+  <img src="pictures/pic3.png" width="100%" />
+  <img src="pictures/pic4.png" width="100%"/>
+</p>
 ---
 
 ## 🧠 How It Works
@@ -32,6 +40,9 @@
 | 📊 Risk Score   | Combines ML probability + regex hits (weighted 60/40) |
 | 🛡 Verdict      | Low / Moderate / High Risk based on score thresholds |
 
+<p align="center">
+  <img src="pictures/pic5.png" width="100%" />
+</p>
 ---
 
 ## ✨ Features
